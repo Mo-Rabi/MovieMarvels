@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MoviesService } from '../../services/movies.service';
+import { MoviesService } from '../services/movies.service';
 @Component({
   selector: 'app-all-movies',
   templateUrl: './all-movies.component.html',
