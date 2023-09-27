@@ -1,5 +1,5 @@
 
-<div class="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
   <div class="col" *ngFor="let movie of movies">
     <div class="card">
       <img [src]="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" class="card-img-top" alt="...">
@@ -12,5 +12,27 @@
       </div>
     </div>
   </div>
+</div> -->
+<div class="container-fluid">
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
+    <div class="col" *ngFor="let movie of movies">
+      <div class="card">
+        <a href="" class="heart-icon">
+          <i class="fa-regular fa-heart text-warning"></i>
+        </a>
+        <a href="">
+          <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" class="card-img-top" alt="...">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Title: {{movie.title}}</h5>
+          <p class="card-text">Popularity: {{movie.popularity}}</p>
+          <p class="card-text">Evaluation: {{movie.vote_average}}</p>
+          <button class="btn btn-primary">Details</button><br>
+          <button class="btn btn-warning mt-1">Add to wishlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 
