@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AllMoviesComponent } from './all-movies/all-movies.component';
 import { MoviesDetailsComponent } from './movies-details/movies-details.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -9,14 +11,18 @@ import { MoviesDetailsComponent } from './movies-details/movies-details.componen
 @NgModule({
   declarations: [
     AllMoviesComponent,
-    MoviesDetailsComponent
+    MoviesDetailsComponent,
+    WatchlistComponent
   ],
   imports: [
     CommonModule,
+    SharedModule
 
   ],
   exports: [
-    AllMoviesComponent
+    AllMoviesComponent,
+    MoviesDetailsComponent,
+    WatchlistComponent
   ]
 })
 export class MoviesModule { }

@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllMoviesComponent } from './movies/all-movies/all-movies.component';
 import { MoviesDetailsComponent } from './movies/movies-details/movies-details.component';
+import { WatchlistComponent } from './movies/watchlist/watchlist.component';
 
 const routes: Routes = [
   {
-    path: "movies",
+    path: "",
     component: AllMoviesComponent
   },
   {
@@ -13,10 +14,13 @@ const routes: Routes = [
     component: MoviesDetailsComponent
   },
   {
-    path: "**",
-    redirectTo: "movies",
-    pathMatch: "full"
-  }
+    path: "watchlist",
+    component: WatchlistComponent
+  },
+  // {
+  //   path: "**",
+  //   redirectTo: "movies",
+  // }
 ];
 
 @NgModule({
