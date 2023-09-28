@@ -16,7 +16,7 @@ export class MoviesService {
     return this.http.get("https://api.themoviedb.org/3/movie/popular?api_key=3b19eb14d90057338aeb6e74f25ddb7e")
   }
   
-  //! Movie details page
+  //!?Movie details page
   getMovie(id : number): Observable<Movies> {
     const url = `${this.apiURL}/movie/${id}?api_key=${this.apiKey}`;
     return this.http.get<Movies>(url);
