@@ -17,7 +17,6 @@ import { MoviesModule } from './movies/movies.module';
     SharedModule,
     HttpClientModule,
     MoviesModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

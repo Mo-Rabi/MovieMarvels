@@ -1,1 +1,11 @@
-<h1>movies-details works!</h1>
+<div class="container mt-4 ps-0" *ngIf="selectedMovie">
+    <div class="row mb-3">
+        <h4>{{selectedMovie.title}}</h4>
+    </div>
+    <div class="row">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + selectedMovie.poster_path" style="width: 75%; height: 500px; margin: auto;">
+    </div>
+            <div class="row">
+             <p><i class="fa-solid fa-question fa-beat text-warning"></i> {{selectedMovie.overview}}</p>
+        </div>
+    </div>
