@@ -20,7 +20,7 @@
         <a href="" class="heart-icon">
           <i class="fa-regular fa-heart text-warning"></i>
         </a>
-        <a href="">
+        <a routerLink="" (click)="goToMovie(movie.id)">
           <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" class="card-img-top" alt="...">
         </a>
         <div class="card-body">
