@@ -3,7 +3,13 @@
     <div class="col" *ngFor="let movie of movies">
       <div class="card">
         <a class="btn heart-icon" (click)="addToWatchlist(movie)">
-          <i [ngClass]="movie.watchlistStatus ? 'fa fa-heart text-warning' : 'fa-regular fa-heart text-warning'"></i>
+          <i
+            [ngClass]="
+              movie.watchlistStatus
+                ? 'fa fa-heart text-warning'
+                : 'fa-regular fa-heart text-warning'
+            "
+          ></i>
         </a>
         <a routerLink="" (click)="goToMovie(movie.id)">
           <img
@@ -22,4 +28,5 @@
       </div>
     </div>
   </div>
-</div>4
+</div>
+4

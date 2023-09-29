@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { Router } from '@angular/router';
 import { Movies } from 'src/app/shared/interfaces/movies';
-import { watch } from 'graceful-fs';
+
 @Component({
   selector: 'app-all-movies',
   templateUrl: './all-movies.component.html',
@@ -14,15 +14,24 @@ export class AllMoviesComponent {
   watchlist:number[] = []
 
   constructor(private service: MoviesService, private router : Router) {}
-  ngOnInit() {
+  async ngOnInit() {
     this.getMovies()
+    this.getWatchlist()
   }
-  //? get all movies on the homepage
+
+
+
+
+  //? get all movies on the homepage + watchlist status tracking
   getMovies() {
     this.service.getAllMovies().subscribe((res: any) => {
-      this.movies = res.results
+      this.movies = res.results;
+      for (let movie of this.movies) {
+        movie.watchlistStatus = this.watchlist.includes(movie.id);
+      }
     })
   }
+  
   //? navigate specific movie details
   goToMovie(id : number){
     this.router.navigate(['details',id])
@@ -45,4 +54,13 @@ export class AllMoviesComponent {
     }
     localStorage.setItem("watchlist",JSON.stringify(this.watchlist))
   }
+
+
+ //?get watchlist items on homepage component initialization
+  getWatchlist(){
+     this.watchlist= JSON.parse(localStorage.getItem('watchlist')??'[]')
+     console.log(this.watchlist);
+     console.log(this.movies);
+  }
+
 }

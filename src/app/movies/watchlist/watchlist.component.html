@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-body">
             <div class="row">
-              <div class="col-lg-7">
+              <div class="col-lg-12">
                 <h5 class="mb-3">
                   <a href="#!" class="text-body"
                     ><i class="fas fa-long-arrow-alt-left me-2"></i>You
@@ -29,26 +29,29 @@
                     </p>
                   </div>
                 </div>
-                <div>
-                  <h2></h2>
-                  <p></p>
-                </div>
-                <div class="card mb-3" *ngFor="let item of ">
+
+                <div class="card mb-3" *ngFor="let movie of watchlistMovies">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <div class="d-flex flex-row align-items-center">
                         <div>
                           <img
-                            [src]=""
+                            [src]="
+                              'https://image.tmdb.org/t/p/w500' +
+                              movie.poster_path
+                            "
                             class="img-fluid rounded-3"
                             alt="Shopping item"
-                            style="width: 65px"
+                            style="width: 200px"
                           />
                         </div>
                         <div class="ms-3">
-                          <h5>Title</h5>
+                          <h5>{{ movie.title }}</h5>
                           <p class="small mb-0">
-                            film data (genre, release date)
+                            released: {{ movie.release_date }}
+                          </p>
+                          <p class="small mb-0">
+                            vote: {{ movie.vote_average }}
                           </p>
                         </div>
                       </div>
@@ -64,7 +67,7 @@
                     </div>
                   </div>
                 </div>
-                <h5>Total: $</h5>
+                <h5>add a link or cool statement here</h5>
               </div>
             </div>
           </div>
