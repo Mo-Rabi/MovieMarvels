@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 img{
   height: 300px;
 }
@@ -10,3 +11,17 @@ img{
   font-size: 25px;
 
 }
+=======
+img{
+  height: 300px;
+}
+.heart-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 5px;
+  font-size: 25px;
+
+}
+>>>>>>> origin/main
