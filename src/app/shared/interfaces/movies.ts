@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export interface Movies {
     adult: boolean;
     backdrop_path: string;
@@ -13,8 +12,8 @@ export interface Movies {
     overview: string;
     popularity: number;
     poster_path: string;
-    production_companies: any[]; 
-    production_countries: any[]; 
+    production_companies: any[];
+    production_countries: any[];
     release_date: string;
     revenue: number;
     runtime: number;
@@ -27,34 +26,3 @@ export interface Movies {
     vote_count: number;
     watchlistStatus?:boolean
     }
-=======
-export interface Movies {
-    adult: boolean;
-    backdrop_path: string;
-    belongs_to_collection: any;
-    budget: number;
-    genres: any[];
-    homepage: string;
-    id: number;
-    imdb_id: string;
-    original_language: string;
-    original_title: string;
-    overview: string;
-    popularity: number;
-    poster_path: string;
-    production_companies: any[]; 
-    production_countries: any[]; 
-    release_date: string;
-    revenue: number;
-    runtime: number;
-    spoken_languages: any[];
-    status: string;
-    tagline: string;
-    title: string;
-    video: boolean;
-    vote_average: number;
-    vote_count: number;
-    watchlistStatus?:boolean
-    }
->>>>>>> origin/main
-  

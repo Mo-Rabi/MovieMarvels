@@ -1,26 +1,11 @@
-<<<<<<< HEAD
   .heart-icon {
     position: absolute;
     left: 0;
     z-index: 1;
     padding: 5px;
     font-size: 40px;
-  
+
   }
 #questionIcon{
   font-size: 40px;
 }
-=======
-  .heart-icon {
-    position: absolute;
-    left: 0;
-    z-index: 1;
-    padding: 5px;
-    font-size: 40px;
-  
-  }
-#questionIcon{
-  font-size: 40px;
-}
->>>>>>> origin/main
-  
