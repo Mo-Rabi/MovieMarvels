@@ -4,6 +4,7 @@ import { AllMoviesComponent } from './all-movies/all-movies.component';
 import { MoviesDetailsComponent } from './movies-details/movies-details.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { SharedModule } from '../shared/shared.module';
+import { FilterPipe } from '../sharedPipe/filter.pipe';
 
 
 
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     AllMoviesComponent,
     MoviesDetailsComponent,
-    WatchlistComponent
+    WatchlistComponent, 
+    FilterPipe
   ],
   imports: [
     CommonModule,

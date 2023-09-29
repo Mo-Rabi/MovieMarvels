@@ -7,9 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviesModule } from './movies/movies.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -17,6 +19,7 @@ import { MoviesModule } from './movies/movies.module';
     SharedModule,
     HttpClientModule,
     MoviesModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

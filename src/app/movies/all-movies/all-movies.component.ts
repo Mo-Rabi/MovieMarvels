@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { Router } from '@angular/router';
 import { Movies } from 'src/app/shared/interfaces/movies';
+import { SharedServiceService } from 'src/app/shared/service/shared-service.service';
 
 @Component({
   selector: 'app-all-movies',
@@ -13,9 +14,13 @@ export class AllMoviesComponent {
   movies: any[] = []
   watchlist:number[] = []
 
-  constructor(private service: MoviesService, private router : Router) {}
+  constructor(private service: MoviesService, private router : Router, private cartService: SharedServiceService) {}
+  searchKey: string = ''; 
   ngOnInit() {
     this.getMovies()
+    this.cartService.search.subscribe(val => {
+      this.searchKey = val
+    })
   }
   //? get all movies on the homepage
   getMovies() {
