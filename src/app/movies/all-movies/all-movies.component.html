@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
     <div class="col" *ngFor="let movie of movies | filter: searchKey: 'title'">
@@ -19,49 +18,14 @@
             alt="..."
           />
         </a>
-        <div class="card-body">
-          <h5 class="card-title">Title: {{ movie.title }}</h5>
-          <p class="card-text">Popularity: {{ movie.popularity }}</p>
-          <p class="card-text">Evaluation: {{ movie.vote_average }}</p>
-          <button class="btn btn-primary">Details</button><br />
-          <button class="btn btn-warning mt-1">Add to wishlist</button>
+        <div class="card-body bg-warning text-dark">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <p class="card-text"><i class="fa-solid fa-arrow-trend-up"></i> {{ movie.popularity }}</p>
+          <p class="card-text"><i class="fa-regular fa-star"></i> {{ movie.vote_average }}</p>
+          <p class="card-text bg-dark text-light text-center">© [2023] ITI. All rights reserved.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 4
-=======
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
-    <div class="col" *ngFor="let movie of movies">
-      <div class="card">
-        <a class="btn heart-icon" (click)="addToWatchlist(movie)">
-          <i
-            [ngClass]="
-              movie.watchlistStatus
-                ? 'fa fa-heart text-warning'
-                : 'fa-regular fa-heart text-warning'
-            "
-          ></i>
-        </a>
-        <a routerLink="" (click)="goToMovie(movie.id)">
-          <img
-            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
-            class="card-img-top"
-            alt="..."
-          />
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Title: {{ movie.title }}</h5>
-          <p class="card-text">Popularity: {{ movie.popularity }}</p>
-          <p class="card-text">Evaluation: {{ movie.vote_average }}</p>
-          <button class="btn btn-primary">Details</button><br />
-          <button class="btn btn-warning mt-1">Add to wishlist</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-4
->>>>>>> origin/main
