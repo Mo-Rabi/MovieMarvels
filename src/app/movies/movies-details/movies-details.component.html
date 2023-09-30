@@ -1,11 +1,54 @@
 <div class="container mt-4 ps-0" *ngIf="selectedMovie">
     <div class="row mb-3">
-        <h4>{{selectedMovie.title}}</h4>
+        <h4>{{selectedMovie.title}} ({{selectedMovie.release_date | date:'y'}})</h4>
     </div>
     <div class="row">
-            <img [src]="'https://image.tmdb.org/t/p/w500' + selectedMovie.poster_path" style="width: 75%; height: 500px; margin: auto;">
-    </div>
+        <div class="col-lg-3 col-md-12">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + selectedMovie.poster_path" class="rounded"
+                style="width: 100%;">
+
+        </div>
+        <div class="col-lg-9 col-md-12">
             <div class="row">
-             <p><i class="fa-solid fa-question fa-beat text-warning"></i> {{selectedMovie.overview}}</p>
+                <div class="col-9">
+                    <span class="badge rounded-pill text-bg-warning genre mt-5"
+                        *ngFor="let genre of selectedMovie.genres">{{genre.name}}</span>
+                    <p>{{selectedMovie.overview}}</p>
+                    <span style="margin-right: 40px;"><i class="fa-solid fa-language text-warning"></i>
+                        {{getLanguageName(selectedMovie.original_language)}} </span>
+                    <span><i class="fa-solid fa-calendar-days text-warning"></i> Released in
+                        {{selectedMovie.release_date |
+                        date}}</span>
+                    <br>
+                    <br>
+                    <span><i class="fa-solid fa-arrow-trend-up text-warning"></i> {{ selectedMovie.popularity }}</span>
+                    <span style="margin-left: 40px;"><i class="fa fa-star text-warning"></i> {{
+                        selectedMovie.vote_average }}</span>
+                    <span style="margin-left: 40px;"><i class="fa-solid fa-globe text-warning"></i> Reviewed by
+                        {{selectedMovie.vote_count}} users</span>
+                    <br>
+                    <br>
+                    <p><i class="fa-solid fa-user text-warning"></i> {{ selectedMovie.adult == false ? 'Allowed for -18'
+                        : 'Allowed only for +18' }}</p>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-warning rounded-pill mt-5" role="button"><i
+                            class='fa-regular fa-heart text-dark'></i> Add
+                        to watchlist</a>
+                        <br>
+                        <!---------------------Link here----------------------------->
+                    <a routerLink="" class="text-decoration-none text-dark"><i class="fa-solid fa-arrow-right text-warning"></i> For more details</a>
+                </div>
+            </div>
         </div>
     </div>
+    <p><i class="fa-solid fa-building text-warning mt-5 "> Production Companies</i></p>
+    <div class="row" *ngFor="let country of selectedMovie.production_companies">
+        
+            <img *ngIf="country.logo_path" [src]="'https://image.tmdb.org/t/p/w500' + country.logo_path" style="width: auto; height: 50px;">
+            <p>{{country.name}}</p>
+            <span style="margin-right: 40px;"><i class="fa-solid fa-flag text-warning"></i>
+                {{getCountryName(country.origin_country)}} </span>
+                <hr>
+    </div>
+</div>
