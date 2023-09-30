@@ -18,14 +18,18 @@ export class AllMoviesComponent {
   searchKey: string = '';
   ngOnInit() {
     this.getMovies()
+    this.getWatchlist()
     this.cartService.search.subscribe(val => {
       this.searchKey = val
     })
   }
-  //? get all movies on the homepage
+    //? get all movies on the homepage + watchlist status tracking
   getMovies() {
     this.service.getAllMovies().subscribe((res: any) => {
-      this.movies = res.results
+      this.movies = res.results;
+      for (let movie of this.movies) {
+        movie.watchlistStatus = this.watchlist.includes(movie.id);
+      }
     })
   }
   //? navigate specific movie details
@@ -50,4 +54,12 @@ export class AllMoviesComponent {
     }
     localStorage.setItem("watchlist",JSON.stringify(this.watchlist))
   }
+
+   //?get watchlist items on homepage component initialization
+  getWatchlist(){
+     this.watchlist= JSON.parse(localStorage.getItem('watchlist')??'[]')
+     console.log(this.watchlist);
+     console.log(this.movies);
+  }
+  
 }
