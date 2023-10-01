@@ -5,13 +5,15 @@ import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,RouterModule,
@@ -21,7 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     HeaderComponent,
     AppRoutingModule,
-
+    FooterComponent
   ]
 })
 export class SharedModule { }

@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviesModule } from './movies/movies.module';
 
 
-
 @NgModule({
   declarations: [
     AppComponent
