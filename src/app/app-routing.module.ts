@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AllMoviesComponent } from './movies/all-movies/all-movies.component';
 import { MoviesDetailsComponent } from './movies/movies-details/movies-details.component';
 import { WatchlistComponent } from './movies/watchlist/watchlist.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
@@ -17,10 +18,10 @@ const routes: Routes = [
     path: "watchlist",
     component: WatchlistComponent
   },
-  // {
-  //   path: "**",
-  //   redirectTo: "movies",
-  // }
+  {
+    path: "**",
+    component: ErrorComponent,
+  }
 ];
 
 @NgModule({
