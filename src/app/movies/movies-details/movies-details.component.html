@@ -31,8 +31,12 @@
                         : 'TV-MA' }}</p>
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-warning rounded-pill mt-5 text-light" role="button"><i
-                            class='fa-regular fa-heart text-light'></i> Add to watchlist</a>
+                    <a class="btn btn-warning rounded-pill mt-5 text-light" role="button" (click)="addToWatchlist(selectedMovie)"><i
+                        [ngClass]="
+                        selectedMovie.watchlistStatus
+                          ? 'fa fa-heart text-light'
+                          : 'fa-regular fa-heart text-light'
+                      "></i> Add to watchlist</a>
                         <br>
                         <!---------------------Link here----------------------------->
                     <a routerLink="" class="text-decoration-none text-light"><i class="fa-solid fa-arrow-right text-warning"></i> For more details</a>
