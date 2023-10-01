@@ -11,14 +11,13 @@
         <div class="col-lg-9 col-md-12">
             <div class="row">
                 <div class="col-9">
-                    <span class="badge rounded-pill text-bg-warning genre mt-5"
+                    <span class="badge rounded-pill text-bg-warning genre mt-5 "
                         *ngFor="let genre of selectedMovie.genres">{{genre.name}}</span>
                     <p>{{selectedMovie.overview}}</p>
                     <span style="margin-right: 40px;"><i class="fa-solid fa-language text-warning"></i>
                         {{getLanguageName(selectedMovie.original_language)}} </span>
                     <span><i class="fa-solid fa-calendar-days text-warning"></i> Released in
-                        {{selectedMovie.release_date |
-                        date}}</span>
+                        {{selectedMovie.release_date | date}}</span>
                     <br>
                     <br>
                     <span><i class="fa-solid fa-arrow-trend-up text-warning"></i> {{ selectedMovie.popularity }}</span>
@@ -28,27 +27,24 @@
                         {{selectedMovie.vote_count}} users</span>
                     <br>
                     <br>
-                    <p><i class="fa-solid fa-user text-warning"></i> {{ selectedMovie.adult == false ? 'Allowed for -18'
-                        : 'Allowed only for +18' }}</p>
+                    <p><i class="fa-solid fa-eye text-warning"></i> {{ selectedMovie.adult == false ? 'PG-13'
+                        : 'TV-MA' }}</p>
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-warning rounded-pill mt-5" role="button"><i
-                            class='fa-regular fa-heart text-dark'></i> Add
-                        to watchlist</a>
+                    <a class="btn btn-warning rounded-pill mt-5 text-light" role="button"><i
+                            class='fa-regular fa-heart text-light'></i> Add to watchlist</a>
                         <br>
                         <!---------------------Link here----------------------------->
-                    <a routerLink="" class="text-decoration-none text-dark"><i class="fa-solid fa-arrow-right text-warning"></i> For more details</a>
+                    <a routerLink="" class="text-decoration-none text-light"><i class="fa-solid fa-arrow-right text-warning"></i> For more details</a>
                 </div>
             </div>
         </div>
     </div>
-    <p><i class="fa-solid fa-building text-warning mt-5 "> Production Companies</i></p>
-    <div class="row" *ngFor="let country of selectedMovie.production_companies">
-        
-            <img *ngIf="country.logo_path" [src]="'https://image.tmdb.org/t/p/w500' + country.logo_path" style="width: auto; height: 50px;">
-            <p>{{country.name}}</p>
-            <span style="margin-right: 40px;"><i class="fa-solid fa-flag text-warning"></i>
-                {{getCountryName(country.origin_country)}} </span>
-                <hr>
-    </div>
+    <p class="d-inline me-5"><i class="fa-solid fa-building text-warning mt-5 "> Production Companies</i>  <i class="fa-solid fa-arrow-right text-warning"></i></p> 
+    <span *ngFor="let country of selectedMovie.production_companies">
+        <span *ngIf="country.logo_path">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + country.logo_path" style="width: 50px; height: 50px; margin-right: 5%;">
+        </span>
+    </span>
 </div>
+<br>
