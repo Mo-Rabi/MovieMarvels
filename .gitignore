@@ -129,4 +129,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+#.angular folder and sub-folders (babel and cache)
 .angular/
