@@ -1,11 +1,26 @@
-<div class="recommendation-section">
+<div class="container">
     <h2>Recommended Movies</h2>
-    <div class="movie-list">
-      <div class="movie-card" *ngFor="let movie of randomMovies">
-        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" style="width: 100px;"> 
-        <h3>{{ movie.title }}</h3>
-      <p>{{ movie.overview }}</p>
-      </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-6 col-sm-12" *ngFor="let movie of randomMovies" style="margin-right: 20px;">
+        <div class="card" style="width: 13rem;">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+             class="card-img-top" [alt]="movie.title">
+            <a [routerLink]="'/imdb/' + movie.imdb_id"><div class="card-body bg-warning text-light text-decoration-none">
+                <h5 class="card-title">{{ movie.title }}</h5>
+            </div></a>
+          </div>
+        <!-- <div class="card">
+            <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            class="card-img-top"
+            [alt]="movie.title"
+          />
+              <div class="card-body bg-warning text-light ">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text"><i class="fa-solid fa-arrow-trend-up"></i> {{ movie.popularity }}</p>
+              <p class="card-text"><i class="fa-regular fa-star"></i> {{ movie.vote_average }}</p>
+            </div>
+      </div> -->
     </div>
   </div>
   
