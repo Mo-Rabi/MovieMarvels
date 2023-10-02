@@ -6,47 +6,49 @@
         <div class="col-lg-3 col-md-12">
             <img [src]="'https://image.tmdb.org/t/p/w500' + selectedMovie.poster_path" class="rounded"
                 style="width: 100%;">
-
         </div>
         <div class="col-lg-9 col-md-12">
             <div class="row">
                 <div class="col-9">
-                    <span class="badge rounded-pill text-bg-warning genre mt-5 "
+                    <span class="badge rounded-pill genre mt-5" style="background-color: #ff9310; color: #e5e5cb"
                         *ngFor="let genre of selectedMovie.genres">{{genre.name}}</span>
                     <p>{{selectedMovie.overview}}</p>
-                    <span style="margin-right: 40px;"><i class="fa-solid fa-language text-warning"></i>
+                    <span style="margin-right: 40px;"><i class="fa-solid fa-language"></i>
                         {{getLanguageName(selectedMovie.original_language)}} </span>
-                    <span><i class="fa-solid fa-calendar-days text-warning"></i> Released in
+                    <span><i class="fa-solid fa-calendar-days"></i> Released in
                         {{selectedMovie.release_date | date}}</span>
                     <br>
                     <br>
-                    <span><i class="fa-solid fa-arrow-trend-up text-warning"></i> {{ selectedMovie.popularity }}</span>
-                    <span style="margin-left: 40px;"><i class="fa fa-star text-warning"></i> {{
+                    <span><i class="fa-solid fa-arrow-trend-up"></i> {{ selectedMovie.popularity }}</span>
+                    <span style="margin-left: 40px;"><i class="fa fa-star "></i> {{
                         selectedMovie.vote_average }}</span>
-                    <span style="margin-left: 40px;"><i class="fa-solid fa-globe text-warning"></i> Reviewed by
+                    <span style="margin-left: 40px;"><i class="fa-solid fa-globe"></i> Reviewed by
                         {{selectedMovie.vote_count}} users</span>
                     <br>
                     <br>
-                    <p><i class="fa-solid fa-eye text-warning"></i> {{ selectedMovie.adult == false ? 'PG-13'
+                    <p><i class="fa-solid fa-eye"></i> {{ selectedMovie.adult == false ? 'PG-13'
                         : 'TV-MA' }}</p>
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-warning rounded-pill mt-5 text-light" role="button" (click)="addToWatchlist(selectedMovie)"><i
-                        [ngClass]="
+                    <a class="btn rounded-pill mt-5" style="background-color: #ff9310;color: #e5e5cb" role="button"
+                        (click)="addToWatchlist(selectedMovie)"><i [ngClass]="
                         selectedMovie.watchlistStatus
                           ? 'fa fa-heart text-light'
                           : 'fa-regular fa-heart text-light'
                       "></i> Add to watchlist</a>
-                        <br>
-                    <a [href]="'https://www.imdb.com/title/' + selectedMovie.imdb_id" class="text-decoration-none text-light"><i class="fa-solid fa-arrow-right text-warning"></i> For more details</a>
+                    <br>
+                    <a [href]="'https://www.imdb.com/title/' + selectedMovie.imdb_id" class="text-decoration-none"
+                        style="color:#e5e5cb;"><i class="fa-solid fa-arrow-right"></i> For more details</a>
                 </div>
             </div>
         </div>
     </div>
-    <p class="d-inline me-5"><i class="fa-solid fa-building text-warning mt-5 "> Production Companies</i>  <i class="fa-solid fa-arrow-right text-warning"></i></p> 
+    <p class="d-inline me-5"><i class="fa-solid fa-building mt-5 " style="color: #ff9310;"> Production Companies</i> <i
+            class="fa-solid fa-arrow-right"></i></p>
     <span *ngFor="let country of selectedMovie.production_companies">
         <span *ngIf="country.logo_path">
-            <img [src]="'https://image.tmdb.org/t/p/w500' + country.logo_path" style="width: 50px; height: 50px; margin-right: 5%;">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + country.logo_path"
+                style="width: 50px; height: 50px; margin-right: 5%;">
         </span>
     </span>
 </div>
