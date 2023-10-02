@@ -5,12 +5,13 @@ import { MoviesDetailsComponent } from './movies/movies-details/movies-details.c
 import { WatchlistComponent } from './movies/watchlist/watchlist.component';
 import { ErrorComponent } from './error/error.component';
 import { authGuard } from './auth.guard';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   {
     path: "",
     component: AllMoviesComponent,
-    canActivate: [authGuard],
   },
   {
     path: "details/:id",
@@ -19,6 +20,16 @@ const routes: Routes = [
   {
     path: "watchlist",
     component: WatchlistComponent
+  },
+  {
+    path: "sign-in",
+    component: SignInComponent,
+    canActivate: [authGuard],
+
+  },
+  {
+    path: "sign-up",
+    component: SignUpComponent
   },
   {
     path: "**",
