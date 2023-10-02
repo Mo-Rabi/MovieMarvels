@@ -13,7 +13,7 @@ export class RandomComponent {
   constructor(private movieService: MoviesService) {}
 
   ngOnInit() {
-    this.movieService.getRandomMovies(5)
+    this.movieService.getRandomMovies(4)
       .subscribe((movies: Movies[]) => {
         this.randomMovies = movies;
       });

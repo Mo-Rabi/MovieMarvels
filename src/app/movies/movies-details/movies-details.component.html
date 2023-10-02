@@ -38,8 +38,7 @@
                           : 'fa-regular fa-heart text-light'
                       "></i> Add to watchlist</a>
                         <br>
-                        <!---------------------Link here----------------------------->
-                    <a routerLink="" class="text-decoration-none text-light"><i class="fa-solid fa-arrow-right text-warning"></i> For more details</a>
+                    <a [href]="'https://www.imdb.com/title/' + selectedMovie.imdb_id" class="text-decoration-none text-light"><i class="fa-solid fa-arrow-right text-warning"></i> For more details</a>
                 </div>
             </div>
         </div>
