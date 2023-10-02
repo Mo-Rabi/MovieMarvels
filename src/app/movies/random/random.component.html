@@ -1,0 +1,11 @@
+<div class="recommendation-section">
+    <h2>Recommended Movies</h2>
+    <div class="movie-list">
+      <div class="movie-card" *ngFor="let movie of randomMovies">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" style="width: 100px;"> 
+        <h3>{{ movie.title }}</h3>
+      <p>{{ movie.overview }}</p>
+      </div>
+    </div>
+  </div>
+  

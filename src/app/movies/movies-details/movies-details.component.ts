@@ -37,11 +37,11 @@ export class MoviesDetailsComponent implements OnInit {
 
   getLanguageName(prefix: string): string {
     const language = this.languages.find(lang => lang.prefix === prefix);
-    return language ? language.name : 'Unknown';
+    return language ? language.name : '';
   }
   getCountryName(prefix: string): string {
     const country = this.countries.find(coun => coun.prefix === prefix);
-    return country ? country.name : 'Unknown';
+    return country ? country.name : '';
   }
   selectedMovie: Movies | undefined;
   idActive: number | undefined;
