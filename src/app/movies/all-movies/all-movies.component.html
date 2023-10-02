@@ -1,7 +1,10 @@
 <!-- <<<<<<< HEAD -->
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
-    <div class="col" *ngFor="let movie of movies | filter: searchKey: 'title'">
+    <div
+      class="col"
+      *ngFor="let movie of movies | filter : searchKey : 'title'"
+    >
       <div class="card">
         <a class="btn heart-icon" (click)="addToWatchlist(movie)">
           <i
@@ -19,10 +22,19 @@
             [alt]="movie.title"
           />
         </a>
-        <div class="card-body bg-warning text-light">
+        <div
+          class="card-body"
+          style="background-color: #ff9310; color: #e5e5cb"
+        >
           <h5 class="card-title">{{ movie.title }}</h5>
-          <p class="card-text"><i class="fa-solid fa-arrow-trend-up"></i> {{ movie.popularity }}</p>
-          <p class="card-text"><i class="fa-regular fa-star"></i> {{ movie.vote_average }}</p>
+          <p class="card-text">
+            <i class="fa-solid fa-arrow-trend-up" style="color: green"></i>
+            {{ (movie.popularity / 300).toFixed(1) }}
+          </p>
+          <p class="card-text">
+            <i class="fas fa-star" style="color: gold"></i>
+            {{ movie.vote_average }}
+          </p>
           <!-- <p class="card-text bg-dark text-light text-center">© [2023] ITI. All rights reserved.</p> -->
         </div>
       </div>
