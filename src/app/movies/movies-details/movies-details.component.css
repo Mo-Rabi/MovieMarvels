@@ -4,11 +4,13 @@
     z-index: 1;
     padding: 5px;
     font-size: 40px;
-
   }
 #questionIcon{
   font-size: 40px;
 }
 .genre{
   margin-left: 20px;
+}
+i{
+ color: #ff9310;
 }
