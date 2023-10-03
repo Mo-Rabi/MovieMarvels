@@ -6,6 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesModule } from './movies/movies.module';
 import { ErrorComponent } from './error/error.component';
+
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +17,7 @@ import { FormsModule } from '@angular/forms';
     ErrorComponent,
     SignInComponent,
     SignUpComponent,
-
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,6 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MoviesModule,
     FormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

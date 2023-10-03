@@ -5,6 +5,7 @@ import { MoviesDetailsComponent } from './movies-details/movies-details.componen
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { SharedModule } from '../shared/shared.module';
 import { FilterPipe } from '../sharedPipe/filter.pipe';
+import { RandomComponent } from './random/random.component';
 
 
 
@@ -14,7 +15,8 @@ import { FilterPipe } from '../sharedPipe/filter.pipe';
     AllMoviesComponent,
     MoviesDetailsComponent,
     WatchlistComponent,
-    FilterPipe
+    FilterPipe,
+    RandomComponent
   ],
   imports: [
     CommonModule,

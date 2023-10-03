@@ -1,26 +1,43 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand text-light" routerLink="/">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item ">
-            <a class="nav-link active text-light"  routerLink="/watchlist" >Watchlist</a>
-          </li>
-          <li class="nav-item ">
+  <div class="container-fluid">
+    <a routerLink="/"><img src="../../../favicon.ico" width="50px" alt="" /></a>
+    <a class="navbar-brand text-light ms-3" routerLink="/">Home</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-light" routerLink="/watchlist"
+            >Watchlist</a
+          >
+        </li>
+        <li class="nav-item ">
             <a class="nav-link active text-light"  routerLink="/sign-in" >SignIn</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link active text-light"  routerLink="/sign-up" >SignUp</a>
           </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" (keyup)="search($event)" name="searchTerm">
-
-        </form>
-      </div>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+          name="searchTerm"
+        />
+      </form>
     </div>
-  </nav>
-
+  </div>
+</nav>
