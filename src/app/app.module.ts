@@ -7,9 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviesModule } from './movies/movies.module';
 import { ErrorComponent } from './error/error.component';
 
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
+    ErrorComponent,
+    SignInComponent,
+    SignUpComponent,
     ErrorComponent
   ],
   imports: [
@@ -18,6 +25,7 @@ import { ErrorComponent } from './error/error.component';
     SharedModule,
     HttpClientModule,
     MoviesModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
