@@ -1,31 +1,19 @@
 <!-- <<<<<<< HEAD -->
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
-    <div
-      class="col"
-      *ngFor="let movie of movies | filter : searchKey : 'title'"
-    >
+    <div class="col" *ngFor="let movie of array2 | filter : searchKey : 'title'">
       <div class="card">
         <a class="btn heart-icon" (click)="addToWatchlist(movie)">
-          <i
-            [ngClass]="
+          <i [ngClass]="
               movie.watchlistStatus
                 ? 'fa fa-heart text-warning'
                 : 'fa-regular fa-heart text-warning'
-            "
-          ></i>
+            "></i>
         </a>
         <a routerLink="" (click)="goToMovie(movie.id)">
-          <img
-            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
-            class="card-img-top"
-            [alt]="movie.title"
-          />
+          <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" class="card-img-top" [alt]="movie.title" />
         </a>
-        <div
-          class="card-body"
-          style="background-color: #ff9310; color: #e5e5cb"
-        >
+        <div class="card-body" style="background-color: #ff9310; color: #e5e5cb">
           <h5 class="card-title">{{ movie.title }}</h5>
           <p class="card-text">
             <i class="fa-solid fa-arrow-trend-up" style="color: green"></i>
@@ -40,4 +28,21 @@
       </div>
     </div>
   </div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" *ngFor="let x of array;let i = index"><a class="page-link" href="#"
+          (click)="pagination(i)">{{i+1}}</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
 </div>

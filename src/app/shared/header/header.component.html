@@ -16,10 +16,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
+
           <a class="nav-link active text-light" routerLink="/watchlist"
-            >Watchlist</a
+            >Watchlist <span
+            class="position-absolute top-40 translate-middle badge rounded-pill bg-danger"
+            ><small>{{watchlistItemsNum}}</small></span
+          ></a
           >
-        </li>
         <li class="nav-item ">
             <a class="nav-link active text-light"  routerLink="/sign-in" >SignIn</a>
           </li>
